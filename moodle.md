@@ -35,7 +35,7 @@ Create Database and user
 ### Get moodle
     cd /var/www
     sudo git clone -b MOODLE_501_STABLE git://git.moodle.org/moodle.git
-    cd mkdir /var/www/moodledata
+    sudo mkdir /var/www/moodledata
     sudo chown -R www-data:www-data /var/www/moodle
     sudo chown -R www-data:www-data /var/www/moodledata
     sudo chmod 0777 /var/www/moodle
@@ -47,7 +47,7 @@ Create Database and user
 Configuration file (Important: root-directory as of Moodle 5.1 is /.../moodle/public)
 <code>
 server {
-    liste 80;
+    listen 80;
     server_name moodle.lädi.org;
   
     root /var/www/moodle/public;
@@ -60,7 +60,7 @@ server {
     }
     location ~ [^/]\.php(/|$) {
         fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;  # Adjust if different PHP version
+        fastcgi_pass unix:/var/run/php/php8.4-fpm.sock;  # Adjust if different PHP version
         fastcgi_index index.php;
         include fastcgi_params;
         fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
