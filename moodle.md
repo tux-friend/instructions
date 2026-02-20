@@ -6,6 +6,7 @@
 
 ### Creade moodle database and user
 Login with <code>sudo mariadb -u root -p</code> and then
+
     -- Remove anonymous users
     DELETE FROM mysql.user WHERE User='';
     -- Disallow remote root login
