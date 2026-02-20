@@ -8,15 +8,24 @@
 Login with <code>sudo mariadb -u root -p</code> and then
 
 Remove anonymous users
+
     DELETE FROM mysql.user WHERE User='';
+    
 Disallow remote root login
+
     DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
+    
 Remove test database
+
     DROP DATABASE IF EXISTS test;
     DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';
+    
 Reload privilege tables
+
     FLUSH PRIVILEGES;
+    
 Create Database and user
+
     CREATE DATABASE moodle DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
     CREATE USER 'moodleuser'@'localhost' IDENTIFIED BY 'your_secure_password';
     GRANT ALL PRIVILEGES ON moodle.* TO 'moodleuser'@'localhost';
