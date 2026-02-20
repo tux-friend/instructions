@@ -78,4 +78,6 @@ server {
     sudo ln -s /etc/nginx/sites-available/moodle /etc/nginx/sites-enabled/
     sudo nginx -t
     sudo /etc/init.d/apache2 stop
-    sudo systemctl reload nginx
+    sudo rm /etc/nginx/sites-enabled/default
+    sudo nano /etc/php/8.4/fpm/php.ini #Change line with max_input_vars = 5000    
+    sudo systemctl restart nginx
