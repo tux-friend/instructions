@@ -74,3 +74,7 @@ server {
     }
 }
 </code>
+
+    sudo ln -s /etc/nginx/sites-available/moodle /etc/nginx/sites-enabled/
+    sudo nginx -t
+    sudo systemctl reload nginx
