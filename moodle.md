@@ -4,7 +4,8 @@
     sudo apt-get install php php-fpm php-mysql php-xml php-gd php-curl php-zip php-ldap php-intl php-soap php-mbstring php-xmlrpc php-bcmath php-cli php-zip php-json php-readline unzip
     sudo systemctl enable --now nginx mariadb php8.4-fpm
 
-### SQL 
+### Creade moodle database and user
+Login with <code>sudo mariadb -u root -p</code> and then
     -- Remove anonymous users
     DELETE FROM mysql.user WHERE User='';
     -- Disallow remote root login
