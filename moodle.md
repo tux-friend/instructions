@@ -80,4 +80,6 @@ server {
     sudo /etc/init.d/apache2 stop
     sudo rm /etc/nginx/sites-enabled/default
     sudo nano /etc/php/8.4/fpm/php.ini #Change line with max_input_vars = 5000    
+    sudo chown -R root /var/www/moodle
+    sudo chmod -R 0755 /var/www/moodle
     sudo systemctl restart nginx
