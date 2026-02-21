@@ -81,4 +81,5 @@ server {
     sudo nano /etc/php/8.4/fpm/php.ini #Change line with max_input_vars = 5000    
     sudo chown -R root /var/www/moodle
     sudo chmod -R 0755 /var/www/moodle
+    echo "* * * * * /usr/bin/php /var/www/moodle/admin/cli/cron.php >/dev/null" | sudo crontab -u www-data -
     sudo systemctl restart nginx
