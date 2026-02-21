@@ -1,7 +1,6 @@
 ## Install moodle on Raspberry Pi 5
     sudo apt-get update && sudo apt-get upgrade
-    sudo apt-get install nginx mariadb-server git certbot python3-certbot-nginx
-    sudo apt-get install php php-fpm php-mysql php-xml php-gd php-curl php-zip php-ldap php-intl php-soap php-mbstring php-xmlrpc php-bcmath php-cli php-zip php-json php-readline php-yaml unzip
+    sudo apt-get install nginx mariadb-server git certbot python3-certbot-nginx php php-fpm php-mysql php-xml php-gd php-curl php-zip php-ldap php-intl php-soap php-mbstring php-xmlrpc php-bcmath php-cli php-zip php-json php-readline php-yaml unzip
     sudo systemctl enable --now nginx mariadb php8.4-fpm
 
 ### Creade moodle database and user
